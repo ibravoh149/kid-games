@@ -1,5 +1,6 @@
 import { useState, useCallback } from "react";
 import { C } from "./utils/colors";
+import InstallPrompt from "./components/InstallPrompt";
 import BubbleGame     from "./games/BubbleGame";
 import MemoryGame     from "./games/MemoryGame";
 import CatchGame      from "./games/CatchGame";
@@ -71,6 +72,7 @@ export default function App() {
   const GameComponent = GAME_MAP[screen];
 
   return (
+    <><InstallPrompt />
     <div style={{ width: "100%", height: "100vh", background: BG[screen] || BG.menu, display: "flex", flexDirection: "column", alignItems: "center", fontFamily: "'Fredoka One',cursive", overflow: "hidden", position: "relative" }}>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@700;800;900&display=swap');@keyframes popIn{0%{transform:scale(0) rotate(-10deg)}70%{transform:scale(1.2)}100%{transform:scale(1)}}*{box-sizing:border-box;user-select:none;-webkit-tap-highlight-color:transparent;}button{font-family:'Fredoka One',cursive;}`}</style>
 
@@ -111,5 +113,5 @@ export default function App() {
         </div>
       )}
     </div>
-  );
+    </>;
 }
